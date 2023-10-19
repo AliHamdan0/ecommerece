@@ -1,0 +1,148 @@
+.headerContainer {
+  padding: 20px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menuContainer {
+  justify-content: space-between;
+  align-items: center;
+  gap: 3vw;
+}
+.menuItem {
+  transition: 0.2s;
+  position: relative;
+  font-size: 19px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.cartIconContainer {
+  box-shadow: 0 0 15px 0 #d6c3c3;
+  padding: 8px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cartImage {
+  border-radius: 4px;
+}
+.cartFont {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+}
+/* .cartNumberNotify {
+  position: absolute;
+  background-color: #d53737;
+  color: #fff;
+  padding: 5px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+} */
+/* Mobile */
+/* Header */
+.headFlex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 100%;
+}
+.headList {
+  /* display: none; */
+  align-items: center;
+  height: 100%;
+}
+.headFont {
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 140%;
+  letter-spacing: 0.8px;
+}
+@media (min-width: 1199px) {
+  .headFont {
+    font-size: 16px;
+  }
+}
+.headBox {
+  height: 100%;
+  flex-grow: 1;
+  justify-content: flex-end;
+  gap: 18px;
+}
+.nameStyle {
+  padding: 8px;
+  border-radius: 50%;
+  font-weight: 900;
+  font-size: 16px;
+}
+/* End Header */
+/* Start Footer */
+.footerBox {
+  height: 65px;
+  width: 100%;
+  /* margin-top: 50px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.customerFooter {
+  height: 65px;
+  width: 100%;
+  /* margin-top: 50px; */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.footerInnerBox {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 5vw;
+}
+.footerText {
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 140%;
+}
+.footSmText {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+}
+.footerIcon {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+}
+/* End Footer */
+
+/* Responsive Mobile Header + Footer*/
+.upperBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.headerMobileFont {
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 140%;
+  letter-spacing: 0.8px;
+}
+.headerMobileFontSelect {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 140%;
+  letter-spacing: 0.8px;
+}
+/* End Responsive */

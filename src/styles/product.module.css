@@ -1,0 +1,38 @@
+.card {
+  /* box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.05); */
+  border: 1px solid #8080803b;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  height: 270px;
+  position: relative;
+}
+.categoryBox {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.mainFont {
+  font-size: 22px;
+  font-weight: 700;
+}
+.cartIconContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  padding: 8px;
+  transition: 0.4s;
+  box-shadow: 0px 0px 5px #8080803b;
+}
+.productIcons {
+  transform: translateY(100px);
+  transition: 0.6s;
+}
+.card:hover .productIcons {
+  transition: 0.6s;
+  transform: translateY(-20px);
+}
