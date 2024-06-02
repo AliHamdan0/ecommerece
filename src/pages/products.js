@@ -1,13 +1,13 @@
-import { Loading } from '@/components/general/loading';
-import { PaginationInc } from '@/components/general/pagination';
-import { MemoFilter } from '@/components/productsPage/filters';
-import { ProductCard } from '@/components/productsPage/productCard';
-import { getProductsApi } from '@/utilities/apiconfing';
-import useFetch from '@/utilities/useFetch';
-import { Box, Container, Grid, Typography } from '@mui/material';
-import Head from 'next/head';
-import { useRouter } from 'next/router';
-import { useState, useEffect, useRef } from 'react';
+import { Loading } from "@/components/general/loading";
+import { PaginationInc } from "@/components/general/pagination";
+import { MemoFilter } from "@/components/productsPage/filters";
+import { ProductCard } from "@/components/productsPage/productCard";
+import { getProductsApi } from "@/utilities/apiconfing";
+import useFetch from "@/utilities/useFetch";
+import { Box, Container, Grid, Typography } from "@mui/material";
+import Head from "next/head";
+import { useRouter } from "next/router";
+import { useState, useEffect, useRef } from "react";
 
 export default function Products() {
   const Router = useRouter();
@@ -17,8 +17,8 @@ export default function Products() {
   const [page, setPage] = useState(Number(Router?.query?.page) || 1);
   const [loading, setLoading] = useState(false);
   const [filters, setFilters] = useState({
-    name: '',
-    category: '',
+    name: "",
+    category: "",
     minPrice: 1,
     maxPrice: 100,
   });
@@ -29,9 +29,9 @@ export default function Products() {
     else {
       const getProducts = async () => {
         setLoading(true);
-        let queryApi = '';
+        let queryApi = "";
         for (const [key, value] of Object.entries(filters))
-          if (value !== '' && value != null) {
+          if (value !== "" && value != null) {
             queryApi += `&${key}=${value}`;
           }
         const response = await getFetch(getProductsApi(page, queryApi));
@@ -52,7 +52,7 @@ export default function Products() {
   }, [Router.isReady]);
 
   return (
-    <Container maxWidth='xl' sx={{ mt: '50px' }}>
+    <Container maxWidth="xl" sx={{ mt: "50px" }}>
       <Head>
         <title>Products Page</title>
       </Head>
@@ -62,19 +62,19 @@ export default function Products() {
         </Grid>
         <Grid item xs={12} lg={9}>
           <Grid container rowSpacing={6} columnSpacing={2}>
-            {data?.map((item) => (
+            {data?.map((item, index) => (
               <Grid item key={item._id} xs={12} md={6} lg={4}>
-                <ProductCard product={item} />
+                <ProductCard product={item} index={index} />
               </Grid>
             ))}
             {loading && <Loading />}
             {data?.length == 0 && (
               <Typography
-                as='h6'
+                as="h6"
                 sx={{
-                  fontSize: '24px',
+                  fontSize: "24px",
                   fontWeight: 700,
-                  color: 'myText.primary.main',
+                  color: "myText.primary.main",
                   my: 5,
                 }}
               >
@@ -84,7 +84,7 @@ export default function Products() {
           </Grid>
         </Grid>
       </Grid>
-      <Box sx={{ my: '60px', display: 'flex', justifyContent: 'center' }}>
+      <Box sx={{ my: "60px", display: "flex", justifyContent: "center" }}>
         <PaginationInc count={totalCount || 1} page={page} setPage={setPage} />
       </Box>
     </Container>

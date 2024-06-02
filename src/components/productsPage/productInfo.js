@@ -1,76 +1,71 @@
-import Image from 'next/image';
-import { Box, Typography, Grid } from '@mui/material';
-import { UpdateQtn } from './updateQtn';
+import Image from "next/image";
+import { Box, Typography, Grid } from "@mui/material";
+import { UpdateQtn } from "./updateQtn";
 
-export const ProductInfo = ({ product, setOpen }) => {
+export const ProductInfo = ({ product, setOpen, index }) => {
   return (
     <Grid container>
-      <Grid
-        item
-        xs={12}
-        md={4}
-        sx={{ position: 'relative', minHeight: '300px' }}
-      >
+      <Grid item xs={12} md={4} sx={{ position: "relative", minHeight: "300px" }}>
         <Image
-          src={product?.image}
-          alt=''
+          src={`/images/products/p${index + 1}.png`}
+          alt=""
           style={{
-            objectFit: 'contain',
+            objectFit: "contain",
           }}
           fill
-          sizes='(min-width:100%), (max-height:100%)'
+          sizes="(min-width:100%), (max-height:100%)"
         />
       </Grid>
       <Grid item xs={12} md={8}>
-        <Box sx={{ display: 'flex', flexDirection: 'column', px: 3, py: 4 }}>
+        <Box sx={{ display: "flex", flexDirection: "column", px: 3, py: 4 }}>
           <Typography
-            as='h6'
+            as="h6"
             sx={{
-              color: 'myText.primary.main',
-              fontSize: '24px',
+              color: "myText.primary.main",
+              fontSize: "24px",
               fontWeight: 600,
               mb: 1,
-              textTransform: 'capitalize',
+              textTransform: "capitalize",
             }}
           >
             {product?.name}
           </Typography>
           <Typography
-            as='h6'
+            as="h6"
             sx={{
               my: 1,
-              color: 'primary.main',
-              fontSize: '18px',
-              fontWeight: '700',
+              color: "primary.main",
+              fontSize: "18px",
+              fontWeight: "700",
             }}
           >
             ${product.price}
           </Typography>
           <Typography
-            as='p'
+            as="p"
             sx={{
-              fontSize: '18px',
+              fontSize: "18px",
               my: 3,
               lineHeight: 2,
-              color: 'myText.secondary.main',
+              color: "myText.secondary.main",
             }}
           >
             {product?.description}
           </Typography>
           <Box
             sx={{
-              display: 'flex',
-              gap: '10px',
-              alignItems: 'center',
-              flexWrap: 'wrap',
+              display: "flex",
+              gap: "10px",
+              alignItems: "center",
+              flexWrap: "wrap",
             }}
           >
             <Typography
-              as='h6'
+              as="h6"
               sx={{
-                fontSize: '20px',
+                fontSize: "20px",
                 fontWeight: 700,
-                color: 'myText.primary.main',
+                color: "myText.primary.main",
               }}
             >
               Qty :
@@ -80,27 +75,27 @@ export const ProductInfo = ({ product, setOpen }) => {
           <Box
             sx={{
               my: 3,
-              display: 'flex',
-              gap: '10px',
-              alignItems: 'center',
+              display: "flex",
+              gap: "10px",
+              alignItems: "center",
             }}
           >
             <Typography
-              as='h6'
+              as="h6"
               sx={{
-                fontSize: '20px',
+                fontSize: "20px",
                 fontWeight: 700,
-                color: 'myText.primary.main',
+                color: "myText.primary.main",
               }}
             >
               Category :
             </Typography>
             <Typography
-              as='h6'
+              as="h6"
               sx={{
-                fontSize: '20px',
+                fontSize: "20px",
                 fontWeight: 700,
-                color: '#000000',
+                color: "#000000",
               }}
             >
               {product?.category}
