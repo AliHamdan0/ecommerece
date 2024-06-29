@@ -10,7 +10,7 @@ import { useRouter } from "next/router";
 import { useState, useEffect, useRef } from "react";
 
 export default function Products() {
-  const Router = useRouter();
+  const Router = useRouter(); //test
   const [data, setData] = useState();
   const [totalCount, setTotalCount] = useState(1);
   const [getFetch] = useFetch();
